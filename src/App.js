@@ -1,35 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import FiglioWithoutStatus from './FiglioWithoutStatus';
-import FiglioWithStatus from './FiglioWithStatus'
 import Stock from './Stock';
 
 function App() {
+  const stockList = [
+    {name: 'appl', founder: 'Jobs', corporateCapital: 10000000},
+    {name: 'GOOG', founder: 'Brin', corporateCapital: 50000000},
+    {name: 'AMZN', founder: 'Bezos', corporateCapital: 9000000}
+  ]
+
   return (
     <div className="App">
       <header className="App-header">
-        <FiglioWithStatus />
-        <FiglioWithoutStatus />
-        <table>
-        <tbody>
-          <tr>
-            <Stock />
-          </tr>
-          </tbody>
-        </table>
-        
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React 32
-        </a>
+        { stockList.map(item => <Stock name={item.name.toUpperCase()} founder={item.founder} corporateCapital={item.corporateCapital} age={30} /> ) }       
       </header>
     </div>
   );

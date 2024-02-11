@@ -15,8 +15,10 @@ class Stock extends Component {
       <div>
         <h3>Figlio: {name}</h3>
         <p>Fondatore: {founder}</p>
+        { this.props.corporateCapital >= 15000000 ? <h3>Azioni salgono</h3> : <h6>Azioni scendono</h6> }
         <p>Lista Hobby</p>
         <ul>{ this.hobby.map(item => <RigaHobby item={item} />)}</ul>
+        
       </div>
     )
   }

@@ -1,5 +1,4 @@
 import React from 'react'
-
 const RigaHobby = (props) => {
     return (
       <React.Fragment>
